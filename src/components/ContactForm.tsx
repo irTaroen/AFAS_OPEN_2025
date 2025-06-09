@@ -207,7 +207,7 @@ const ContactForm = () => {
     <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg animate-slide-in">
       <h1 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-red-gradient-start to-red-gradient-end bg-clip-text text-transparent">Jouw profiel</h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4" autoComplete="on">
         <div className="space-y-2 relative">
           <Label htmlFor="firstName">Voornaam</Label>
           <div className="relative">
@@ -218,6 +218,7 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="Vul uw voornaam in"
               className={errors.firstName ? "border-red-500 pr-10" : "pr-10"}
+              autoComplete="given-name"
             />
             {validFields.firstName && <CheckCircle className="h-4 w-4 absolute right-3 top-3 text-green-action" />}
           </div>
@@ -227,7 +228,15 @@ const ContactForm = () => {
         <div className="space-y-2 relative">
           <Label htmlFor="lastName">Achternaam</Label>
           <div className="relative">
-            <Input id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} placeholder="Vul uw achternaam in" className={errors.lastName ? "border-red-500 pr-10" : "pr-10"} />
+            <Input
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Vul uw achternaam in"
+              className={errors.lastName ? "border-red-500 pr-10" : "pr-10"}
+              autoComplete="family-name"
+            />
             {validFields.lastName && <CheckCircle className="h-4 w-4 absolute right-3 top-3 text-green-action" />}
           </div>
           {errors.lastName && <p className="text-sm text-red-500">{errors.lastName}</p>}
@@ -244,6 +253,7 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="Vul uw e-mailadres in"
               className={errors.email ? "border-red-500 pr-10" : "pr-10"}
+              autoComplete="email"
             />
             {validFields.email && <CheckCircle className="h-4 w-4 absolute right-3 top-3 text-green-action" />}
           </div>
@@ -262,6 +272,7 @@ const ContactForm = () => {
               placeholder="Vul uw telefoonnummer in (10 cijfers)"
               maxLength={10}
               className={errors.phoneNumber ? "border-red-500 pr-10" : "pr-10"}
+              autoComplete="tel"
             />
             {validFields.phoneNumber && <CheckCircle className="h-4 w-4 absolute right-3 top-3 text-green-action" />}
           </div>
@@ -278,6 +289,7 @@ const ContactForm = () => {
               onChange={handleChange}
               placeholder="Vul uw bedrijfsnaam in"
               className={errors.companyName ? "border-red-500 pr-10" : "pr-10"}
+              autoComplete="organization"
             />
             {validFields.companyName && <CheckCircle className="h-4 w-4 absolute right-3 top-3 text-green-action" />}
           </div>
