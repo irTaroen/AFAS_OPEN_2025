@@ -10,7 +10,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export const testSupabaseConnection = async () => {
   try {
     console.log("Testing Supabase connection...");
-    const { data, error } = await supabase.from("participants").select("*").limit(1);
+    const { data, error } = await supabase.from("Registrations_AFAS_OPEN").select("*").limit(1);
 
     if (error) {
       console.error("Supabase connection test error:", error);

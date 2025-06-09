@@ -56,7 +56,7 @@ export const updateFormDataWithResult = async (email: string, result: string): P
     console.log("Attempting to insert record into Supabase:", record);
 
     // Insert the complete record into Supabase
-    const { data, error } = await supabase.from("participants").insert([record]).select();
+    const { data, error } = await supabase.from("Registrations_AFAS_OPEN").insert([record]).select();
 
     if (error) {
       console.error("Supabase insert error:", error);
