@@ -183,11 +183,11 @@ const ContactForm = () => {
         throw error;
       }
 
-      toast({
-        title: "Gegevens Opgeslagen",
-        description: "Je gegevens zijn succesvol opgeslagen.",
-        variant: "default",
-      });
+      // toast({
+      //   title: "Gegevens Opgeslagen",
+      //   description: "Je gegevens zijn succesvol opgeslagen.",
+      //   variant: "default",
+      // });
 
       // Redirect to quotes page immediately after successful submission
       navigate("/quotes");

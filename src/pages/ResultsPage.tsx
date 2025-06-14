@@ -61,10 +61,10 @@ const ResultsPage = () => {
           throw result.error;
         }
 
-        toast({
-          title: "Resultaat Opgeslagen",
-          description: "Je resultaat is succesvol opgeslagen.",
-        });
+        // toast({
+        //   title: "Resultaat Opgeslagen",
+        //   description: "Je resultaat is succesvol opgeslagen.",
+        // });
       } catch (error) {
         console.error("Failed to save profile result:", error);
         toast({
